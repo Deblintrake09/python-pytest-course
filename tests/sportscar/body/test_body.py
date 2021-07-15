@@ -9,9 +9,10 @@ class BodyTests:
     def test_body_functions_as_expected(self):
         assert True
 
+    @mark.xfail
     def test_bumper(self):
         assert False
-
+    @mark.xfail
     def test_windshield(self):
         assert False
 

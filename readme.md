@@ -1,5 +1,7 @@
 This is a simple project of for Pytest with introductory code, to learn:
 
+Run Pytest with different options to
+
 * Basics of Pytest
      * Create pytest.ini for especific configs
      * pytest -v (--verbose) for verbose output
@@ -25,9 +27,22 @@ This is a simple project of for Pytest with introductory code, to learn:
     * pytest --junitxml="xmlresult.xml" it is included in pytest
         * can be integrated into jenkins for CI with something like: pytest--junitxml="BUILD_$(BUILD_NUMBER)_results.xml" as part of the jenkins build command
         * In post-build actions of jenkins tell the locations of the test resultxml with something like tests/results/*.xml
-* Skips and Xfails
+
+* Custom Configurations
+    * You can use config.py to set up different enviroments and configurations
+    * pytest_addoption allows to create new options to run pytest
+    
+* Skips and XFails
+    * Use @mark.skip to skip a test
+    * Use @mark.xfail to mark a test that is expected to fail (maybe related to test suite options)
+    * -rs option to get extra info on skipped tests
+    * Add reason in the mark to show details of xfail or skip
     
 * Parametrizing
+    *Use @mark.parametrize to run a test multiple times with different inputs
+    * You can pass the values into the mark, or outside from a file.
+    * Parametrize fixtures using "params"
 * Multithread with x-dist
+    * add -nValue to run tests in a 4 threads (change the Value for differrent ammount).
 * http requests
 * Unit Testing with Tox
